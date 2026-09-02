@@ -1,0 +1,76 @@
+{
+  "skill": "s11-model-tree-four-steps",
+  "version": "0.1.0",
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "怎么把《python 编程》这本书真正吃透，变成我自己能随时调用的知识库？",
+      "expected_behavior": "调用 s11，引导选可存树状的笔记软件作外接大脑，按四步（提炼→存入→形成体系→回归本质）把 Python 知识种成终身可生长的树。",
+      "notes": "意图：把一本书真正内化为自己的知识体系"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "我报了好多课、读了一堆书，但学完就忘，遇到事也调不出来用不上，怎么办？",
+      "expected_behavior": "调用 s11，定位到『学完就忘/用不上』源于人脑四大缺陷，引导用外接大脑+四步总装把知识外显并结构化串联。",
+      "notes": "意图：学很多记不住、用不上（A2 情境2）"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "我想建立一个自己的销售领域长期知识库，零散看教程太碎片了。",
+      "expected_behavior": "调用 s11，引导以『销售』为主题新建树，用六步/复盘提炼模型、按存量四要素存入、形成树状体系并回归本质。",
+      "notes": "意图：建某领域长期知识库（A2 情境3）"
+    },
+    {
+      "id": "should-trigger-04",
+      "type": "should_trigger",
+      "prompt": "我的笔记太乱了，各种知识点串不起来，想有一套可复用的总装流程。",
+      "expected_behavior": "调用 s11，引导用『主题—框架—关系』的树状结构（以上统下、不重不漏）把零散知识串联成体系。",
+      "notes": "意图：知识混乱串不起来、需要总装流程（A2 情境4）"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我就想临时应付一下下周的考试，考完估计就忘了，有没有快点的办法？",
+      "expected_behavior": "不应调用 s11（四步总装是终身工程，临时任务认知负荷高、投入产出不划算）；边界内建议间隔重复/闪卡等轻量方法。",
+      "notes": "诱饵类型：边界不触发（B段：临时一次性任务）"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "我想从零搭一个销售的知识体系，主题和框架怎么定比较合理？",
+      "expected_behavior": "不应调用 s11（s11 是含记忆/理解/笔记软件前提的完整总装）；应调用 s08-knowledge-system（主题/框架/树状结构规则）。",
+      "notes": "诱饵类型：跨书混淆→指向 s08"
+    },
+    {
+      "id": "should-not-trigger-03",
+      "type": "should_not_trigger",
+      "prompt": "我的销售树已经建好了，但现在很乱、模型重复特别多，怎么整理？",
+      "expected_behavior": "不应调用 s11（s11 是『种树/建』，树已建好要运维）；应调用 s12-prune-model-tree（三修剪+三考察）。",
+      "notes": "诱饵类型：跨书混淆→指向 s12"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我只想临时备考这门课，把知识点记到考完就行，不想搞终身那套。",
+      "expected_behavior": "按 B 段边界：不调用 s11，明确告知认知负荷高且短期不划算，转向更轻的记忆/闪卡方案。",
+      "notes": "边界点：临时备考，总装不划算"
+    },
+    {
+      "id": "edge-02",
+      "type": "edge_case",
+      "prompt": "我用思维导图和纸质笔记本整理就行了吧，笔记软件太麻烦我懒得换。",
+      "expected_behavior": "应触发 s11，但需拦截：指出外接大脑误用（ce22），思维导图/笔记本承载不了终身树状存量，须换可存树状笔记软件否则知识孤立。",
+      "notes": "边界点：工具误用（思维导图/笔记本≠外接大脑）"
+    },
+    {
+      "id": "edge-03",
+      "type": "edge_case",
+      "prompt": "模型树听起来好，但我肯定坚持不了每天维护笔记软件，断断续续的。",
+      "expected_behavior": "应触发 s11，但点明边界：无法承诺长期维护，树会枯萎等于没建；需先确认能持续输入与回顾再开工。",
+      "notes": "边界点：无法承诺长期维护笔记软件"
+    }
+  ]
+}

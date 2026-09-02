@@ -1,0 +1,69 @@
+{
+  "skill": "s06-six-step-reading",
+  "version": "0.1.0",
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "怎么把达利欧的《原则》读透，变成我自己能用的模型，而不是看完就忘？",
+      "expected_behavior": "调用 s06-six-step-reading：五马分尸拆句→淘金（跳过桥水故事）→理解→判断→启发提炼模型→封装成四字。",
+      "notes": "想用模型树把书变成自己的模型——A2 场景1、3；对应书中《原则》案例。"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "读一本方法论书，怎么提炼出作者真正的核心框架？我现在就是从头抄到尾。",
+      "expected_behavior": "调用 s06-six-step-reading：以‘一句完整意思的话’为单位五马分尸，跳出整章锚定，六经注我重构体系。",
+      "notes": "想提炼作者核心框架+笔记只是抄书——A2 场景4、语言信号‘怎么做读书笔记’。"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "我刚读完《思考快与慢》，感觉都懂了但说不出收获了什么，怎么把书里的干货变成自己的？",
+      "expected_behavior": "调用 s06-six-step-reading：淘金过滤无价值内容，逐句理解+判断，提炼世界观/方法论模型而非空壳标签。",
+      "notes": "读完了但说不出收获+怎么把书变成自己的——A2 场景2、语言信号。"
+    },
+    {
+      "id": "should-trigger-04",
+      "type": "should_trigger",
+      "prompt": "好几本书讲同一件事说法还互相冲突，我想用模型树把《影响力》和《怪诞行为学》拼出自己的全貌。",
+      "expected_behavior": "调用 s06-six-step-reading：对每本逐句淘金+判断（论据思维不盲从），各自提炼模型后用六经注我重构统一框架。",
+      "notes": "多作者冲突想拼全貌——A2 场景5；体现判断步与独立重构。"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我想从自己三次创业失败里找规律、沉淀出一个以后能复用的方法。",
+      "expected_behavior": "不应调用 s06-six-step-reading（这是从他人书里提炼）；应调用 s05-review-model（从自己经验复盘提炼）。",
+      "notes": "跨书混淆诱饵：从自己经历提炼归 s05，与 s06 是并列路径（contrasts-with）。"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "学了好几遍还是看不懂这个经济学概念，公式背了但一用就废，怎么才能搞懂它？",
+      "expected_behavior": "不应调用 s06-six-step-reading（阅读只是手段之一）；应调用 s04-understanding（以旧学新+生成学习解码法则）。",
+      "notes": "跨书混淆诱饵：搞懂陌生概念属 s04，不是从书提炼模型流程。"
+    },
+    {
+      "id": "should-not-trigger-03",
+      "type": "should_not_trigger",
+      "prompt": "最近在读小说《活着》，有些情节读不进去，想用六步法拆一下提升阅读效率。",
+      "expected_behavior": "不应调用 s06-six-step-reading；纯文学/虚构以体验为主，按 B 段不宜硬提炼模型，建议沉浸体验。",
+      "notes": "边界诱饵：虚构体验阅读，B 段明确不调用。"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我读得特别慢，一章要磨一下午，效率很低，是不是该用六步阅读法提速？",
+      "expected_behavior": "合理边界判断：识别‘读得慢效率低’未必是提炼模型问题，可能只是阅读速度/习惯；说明六步求‘烧脑提炼’非求快，先排查速度根因。",
+      "notes": "边界点：与‘速读’混淆，六步不求快求提炼，未必适用。"
+    },
+    {
+      "id": "edge-02",
+      "type": "edge_case",
+      "prompt": "这本书我早就读烂熟了，每个观点都能背，还需要按六步逐句拆一遍吗？",
+      "expected_behavior": "合理边界判断：识别‘已烂熟领域’，按 B 段无需逐句拆，建议只做增量启发或跨书重构，不重复五马分尸。",
+      "notes": "边界点：已烂熟领域无需逐句拆（B 段边界）。"
+    }
+  ]
+}

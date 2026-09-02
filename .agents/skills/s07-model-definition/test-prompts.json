@@ -1,0 +1,76 @@
+{
+  "skill": "s07-model-definition",
+  "version": "0.1.0",
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我总结了一条经验叫「勤奋决定成功」，这算一个模型吗？",
+      "expected_behavior": "调用 s07，用函数法则检验套入 x→f(x)→y，指出它揭示不了稳定因果、给不了可复用启迪，判为普通组块而非模型。",
+      "notes": "用户质疑自己总结的内容是否算模型（触发场景1、语言信号「这个算模型吗」）"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "怎么判断一个结论是不是真模型，有没有什么检验标准？",
+      "expected_behavior": "调用 s07，给出函数法则图（定义域=因、法则=因果、值域=果）作为试金石，并说明能否解释过去/预测未来。",
+      "notes": "用户想检验经验/结论能否提炼为可复用模型（触发场景4）"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "模型不就是四字成语吗？我把知识点强行压成四个字就当模型用了。",
+      "expected_behavior": "调用 s07，纠正「模型=四字」误解，强调模型跟字数无关，四字只是工作记忆组块压缩便利，形式≠内容。",
+      "notes": "用户把知识压成四字就当模型（触发场景2、语言信号「模型不就是四字成语吗」）"
+    },
+    {
+      "id": "should-trigger-04",
+      "type": "should_trigger",
+      "prompt": "「英雄出少年」和「大器晚成」互相矛盾，我到底该信哪个模型？",
+      "expected_behavior": "调用 s07，用适用边界+多元模型原则解释：两者都在特定条件下成立（相对真理），无绝对真理，应并列使用而非二选一。",
+      "notes": "用户用单一格言硬套、遇冲突模型无所适从（触发场景3、语言信号「为什么A和B矛盾」）"
+    },
+    {
+      "id": "should-trigger-05",
+      "type": "should_trigger",
+      "prompt": "我总结了一句金句「坚持就有回报」，是不是就抓住本质了？",
+      "expected_behavior": "调用 s07，指出金句只是压缩表达，需经函数法则检验看能否揭示因果，否则只是意义组块外衣，不等于掌握模型。",
+      "notes": "用户把金句当本质（语言信号「我总结了一句金句，是不是就掌握本质了」）"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我想搭一个销售领域的知识体系，从主题到框架该怎么搭？",
+      "expected_behavior": "不应调用 s07；应触发 s08-knowledge-system（主题/框架/树状结构）。",
+      "notes": "跨书混淆诱饵：指向同书 s08 知识体系构建"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "帮我把学过的东西都归档整理成一个知识库，建好文件夹分类。",
+      "expected_behavior": "不应调用 s07；应触发 s08（建体系）或 s11 总装流程，s07 只审视单个模型定义而非归档。",
+      "notes": "诱饵：把分类归档当知识体系，需路由到 s08/s11 而非 s07"
+    },
+    {
+      "id": "should-not-trigger-03",
+      "type": "should_not_trigger",
+      "prompt": "我背单词老忘，有什么高效的重复记忆方法？",
+      "expected_behavior": "不应调用 s07；应触发 s03-memory（三层滤网+四种重复）。",
+      "notes": "诱饵：纯记忆事实问题，s07 边界明确不调用"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "「唇亡齿寒」这种四字成语算模型吗？",
+      "expected_behavior": "调用 s07 但判定为模型：它虽四字，但能揭示因果（邻国被灭→你也危险）、解释过去预测未来，是意义组块；与「勤奋决定成功」等无因果组块区分。",
+      "notes": "边界点：四字成语未必都不是模型，关键在函数法则检验能否揭示因果"
+    },
+    {
+      "id": "edge-02",
+      "type": "edge_case",
+      "prompt": "我把读过的「巨人刘秀祥」的故事当成一个模型来用，可以吗？",
+      "expected_behavior": "调用 s07 判定为不是模型：专有名词/事件名，套入函数法则给不了任何运转规律的启迪，只是记忆组块（ce14），不进入模型树。",
+      "notes": "边界点：事件名/人物名当模型（书内案例），应判为组块"
+    }
+  ]
+}

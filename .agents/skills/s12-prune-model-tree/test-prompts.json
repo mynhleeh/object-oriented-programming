@@ -1,0 +1,76 @@
+{
+  "skill": "s12-prune-model-tree",
+  "version": "0.1.0",
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我的销售模型树特别乱，里面好多重复的模型，自己都调不出来，怎么整理？",
+      "expected_behavior": "调用 s12，引导做三修剪（存量/模型/结构）+三考察，先纵向理清因果方向、横向合并去重（不重不漏），消除重复模型。",
+      "notes": "意图：模型树重复/混乱需整理（A2 情境1）"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "我的模型树种了一年，现在长太大了，感觉该修剪一下、往深了想。",
+      "expected_behavior": "调用 s12，引导克服拖延立即开剪，按存量→模型→结构→纵/横/跨界考察推进，把宽泛模型细化、收敛到第一原理。",
+      "notes": "意图：模型树过大需定期大修剪（A2 情境3）"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "我建了《孙子兵法》的兵法树和《定位》的定位树，发现两棵树大量模型重叠，能不能合并？",
+      "expected_behavior": "调用 s12，引导做跨界考察：识别战争与商战被相同法则支配，合并沉淀出更本质的第一原理树，原树降为具体场景树。",
+      "notes": "意图：多体系重叠，需跨界合并收敛（A2 情境4）"
+    },
+    {
+      "id": "should-trigger-04",
+      "type": "should_trigger",
+      "prompt": "最近重读了本经典书，认知升级了，想回看旧树做次深度思考和年度大扫除。",
+      "expected_behavior": "调用 s12，引导以新认知迭代旧模型名、把粗糙模型细分、修剪错位存量，并完成纵/横/跨界三考察。",
+      "notes": "意图：年度大修剪/重读后回看旧树（A2 情境3/5）"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我想从零建一个销售体系，现在脑子里还什么树都没有，怎么开始？",
+      "expected_behavior": "不应调用 s12（s12 是修剪『已有』树，树空无物可剪）；应调用 s08-knowledge-system / s11-model-tree-four-steps 先总装建树。",
+      "notes": "诱饵类型：跨书混淆→指向 s08/s11"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "我的模型树还是空的，正打算开始学这个领域，第一步该干啥？",
+      "expected_behavior": "不应调用 s12（树空则无物可剪）；应调用 s11-model-tree-four-steps 先四步总装积累存量。",
+      "notes": "诱饵类型：跨书混淆→指向 s11"
+    },
+    {
+      "id": "should-not-trigger-03",
+      "type": "should_not_trigger",
+      "prompt": "怎么把《定位》这本书里的模型提炼出来、变成我能用的东西？",
+      "expected_behavior": "不应调用 s12（提炼是『建』的输入，不是修剪）；应调用 s06-six-step-reading（从他人来六步提炼）或 s11 的提炼步。",
+      "notes": "诱饵类型：跨书混淆→指向 s06/s11"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我的树已经很乱了，但我一直拖着没去修，总觉得动手会很痛苦。",
+      "expected_behavior": "应触发 s12，并点明『修剪拖延是最大阻碍』：其本质是预防的痛觉，动手即消退；引导『心狠手辣、立马去做』，把修剪当认知飞升。",
+      "notes": "边界点：修剪之痛/拖延症（ce26）"
+    },
+    {
+      "id": "edge-02",
+      "type": "edge_case",
+      "prompt": "我怕把模型提炼错了，一直不敢动手修剪，万一剪错了怎么办？",
+      "expected_behavior": "应触发 s12，但需消除顾虑：错误早期难免、本就可后期修剪纠正（ce30），不必等『完全懂了再开始』，先动手。",
+      "notes": "边界点：害怕犯错不敢动手（ce30）"
+    },
+    {
+      "id": "edge-03",
+      "type": "edge_case",
+      "prompt": "我想花一个周末把树彻底修剪完美，之后就不用再管了。",
+      "expected_behavior": "应触发 s12，但纠正误区：修剪是终身迭代，没有一劳永逸；『一次完美』不成立，早期错误后期再纠，须持续输入与修剪。",
+      "notes": "边界点：追求一次修剪完美（终身迭代误区）"
+    }
+  ]
+}

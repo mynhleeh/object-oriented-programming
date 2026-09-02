@@ -1,0 +1,69 @@
+{
+  "skill": "s10-transfer-create",
+  "version": "0.1.0",
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我刷短视频上瘾，书里那个『从不开始』的思路（不看第一集）能用到戒烟上吗？",
+      "expected_behavior": "调用 s10，引导用户先把『从不开始』抽象到上瘾本质层第一原理，再演绎回戒烟场景，而非照搬具体做法。",
+      "notes": "意图：跨场景超级迁移（先抽象后演绎）"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "我想做一个真正不一样的产品方案，不想在旧框架上微调，怎么才能真正创新？",
+      "expected_behavior": "调用 s10，提示『创造=第一原理的排列组合』，列出已掌握底层原理并引导做两两/多组合产出新方案。",
+      "notes": "意图：真正创新而非渐进改良"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "我学了一大堆模型，但遇到实际问题根本想不到怎么把它们连起来用，怎么办？",
+      "expected_behavior": "调用 s10，定位到『知识不收敛』问题，引导把孤立模型抽象到共同第一原理，再演绎打通跨场景。",
+      "notes": "意图：学很多却用不上、连不起来（A2 情境4）"
+    },
+    {
+      "id": "should-trigger-04",
+      "type": "should_trigger",
+      "prompt": "『复盘』和『六步阅读』这两个事，是不是被同一个底层原理支配？我想把这层想透。",
+      "expected_behavior": "调用 s10，引导做跨方法抽象：两者都是『从经验/文本提炼模型』的获取路径，收敛到『以句为单位提炼+检验』这一共同第一原理。",
+      "notes": "意图：识别不同事物背后的共同第一原理"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "帮我真正理解一下『熵增』这个物理概念，我老觉得似懂非懂。",
+      "expected_behavior": "不应调用 s10（s10 是『用』已掌握原理去迁移创造，而非帮你理解新概念）；应调用 s04-understanding（以旧学新+生成学习）。",
+      "notes": "诱饵类型：跨书混淆→指向 s04"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "怎么才能找到一件事最底层的、绝对为真的原理？我想从根上弄明白。",
+      "expected_behavior": "不应调用 s10（s10 是『用』原理，不是『找』原理）；应调用 s09-first-principles（巨人法/收敛法/追问法）。",
+      "notes": "诱饵类型：跨书混淆→指向 s09"
+    },
+    {
+      "id": "should-not-trigger-03",
+      "type": "should_not_trigger",
+      "prompt": "怎么把《定位》这本书的笔记整理好、存进我的知识库？",
+      "expected_behavior": "不应调用 s10（这是把知识种进树，不是把原理用出去）；应调用 s11-model-tree-four-steps（提炼→存入→体系）。",
+      "notes": "诱饵类型：跨书混淆→指向 s11"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "帮我校仿/类比一下竞品是怎么做用户增长的，我也照着来一套。",
+      "expected_behavior": "应触发 s10，但需重定向：明确说明『真迁移≠简单类比』，必须先抽象到支配用户增长的底层原理，再演绎，而非表面套用；若用户连原理都没掌握，转 s09。",
+      "notes": "边界点：类比思维≠迁移，须拉回第一原理层"
+    },
+    {
+      "id": "edge-02",
+      "type": "edge_case",
+      "prompt": "我刚入行三个月，啥底层原理都没掌握，但老板让我搞个颠覆式创新方案。",
+      "expected_behavior": "应触发 s10，但按边界判停：尚未掌握足够底层原理，硬创造只会退化成类比；先去 s09/主题阅读积累原理，再回来迁移创造。",
+      "notes": "边界点：原理缺失时强行创造=表面类比"
+    }
+  ]
+}

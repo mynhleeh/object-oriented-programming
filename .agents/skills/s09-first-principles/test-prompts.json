@@ -1,0 +1,76 @@
+{
+  "skill": "s09-first-principles",
+  "version": "0.1.0",
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "为什么我公司总留不住人，我想看透这件事的本质和根源。",
+      "expected_behavior": "调用 s09，用第一原理思维（求根+求真）逼近留人问题的绝对起点，如巨人法/收敛法/追问法，而非列经验清单。",
+      "notes": "用户想看透本质（触发场景1、语言信号「这件事的本质是什么」）"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "怎么用第一性原理去思考一个问题？能教我具体方法吗？",
+      "expected_behavior": "调用 s09，讲清第一原理=绝对为真的起点知识，并给出获取三法：巨人法、收敛法、追问法。",
+      "notes": "用户主动询问第一性原理方法（触发场景/核心主题）"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "大家都这么做，但我不想要经验套路，想要一个根本解法。",
+      "expected_behavior": "调用 s09，强调回到起点重算而非照搬，用追问法大胆猜本质+逻辑演绎+经验观察求证。",
+      "notes": "用户想要根本解法而非经验（语言信号「大家都这么做但我想要根本解法」）"
+    },
+    {
+      "id": "should-trigger-04",
+      "type": "should_trigger",
+      "prompt": "怎么从根本上降本，而不是东拼西凑地省钱？",
+      "expected_behavior": "调用 s09，用第一原理回到成本构成的起点（如马斯克电池拆解），重构方案而非边际削减。",
+      "notes": "用户想从根本破局（语言信号「如何从根本上降本」）"
+    },
+    {
+      "id": "should-trigger-05",
+      "type": "should_trigger",
+      "prompt": "我的知识很零散，想把它收敛到一个更底层的统一原理上。",
+      "expected_behavior": "调用 s09，用收敛法在树状体系上不断向上收敛，逼近统一起点知识。",
+      "notes": "用户想把体系收敛到本质（触发场景4）"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "怎么从我自己的经验里找底层规律？",
+      "expected_behavior": "不应调用 s09（第一原理要求绝对为真的起点+求真验证，更严格）；应触发 s01-san-gui（归纳/归因/归道向内求找法则，归道只是第一原理近似）。",
+      "notes": "跨书混淆诱饵：指向同书 s01 三归，s09 与 s01 的「归道」易混"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "我想把学到的模型按主题框架连成一张体系图。",
+      "expected_behavior": "不应调用 s09；应触发 s08-knowledge-system（体系主题/框架/树状结构）。",
+      "notes": "诱饵：建知识关系结构，归属 s08 而非求第一原理"
+    },
+    {
+      "id": "should-not-trigger-03",
+      "type": "should_not_trigger",
+      "prompt": "学英语单词老忘，有什么靠谱的记忆重复方法？",
+      "expected_behavior": "不应调用 s09；应触发 s03-memory（三层滤网+四种重复）。",
+      "notes": "诱饵：纯记忆事实，s09 边界明确不调用"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我直接类比同行怎么做的留存活动，照着做就行了吧？",
+      "expected_behavior": "调用 s09 但重定向：指出这是类比思维（ce23），照搬相似经验难创新；应改用追问法回到起点重算（如「留人=？」），即便触发也应引导到第一原理路径而非照抄。",
+      "notes": "边界点：用户用类比却以为是根本解，s09 主张不用类比用追问，需重定向（should_trigger 但纠正）"
+    },
+    {
+      "id": "edge-02",
+      "type": "edge_case",
+      "prompt": "我把「坚持就是胜利」当成我做事的第一原理，可以吗？",
+      "expected_behavior": "调用 s09 判定为否：它不满足「绝对为真的起点+可证伪验证」，只是格言/模型（相对真理），应回 s07 做函数法则检验，且需求真验证而非直觉断言。",
+      "notes": "边界点：把格言标榜为第一原理（书内失败模式），需区分模型与第一原理"
+    }
+  ]
+}

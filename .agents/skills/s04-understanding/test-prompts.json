@@ -1,0 +1,69 @@
+{
+  "skill": "s04-understanding",
+  "version": "0.1.0",
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "博弈论里的纳什均衡我学了好几遍还是不懂，公式能背但一遇到具体题目就懵，到底怎么才能真正理解它？",
+      "expected_behavior": "调用 s04-understanding：引导用旧知（经济学/决策思维）建框架锚定，再用生成学习重走纳什均衡的推导过程，而非只复述定义。",
+      "notes": "听懂但不会用、记了说不清为什么——典型理解而非记忆问题。"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "我想快速入门量子计算这个完全陌生的领域，书也买了但翻开像天书，不知道从何入手。",
+      "expected_behavior": "调用 s04-understanding：建议先建领域大框架（如先读科普/发展史）作旧知锚点，再啃硬核内容，用先建框架策略。",
+      "notes": "快速读懂全新学科、不知从何入手——A2 场景4。"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "听课时觉得老师讲的都懂了，结果一做题一实操就不会用，这种‘假懂’怎么破？",
+      "expected_behavior": "调用 s04-understanding：指出这是鹦鹉式学习，需通过生成学习（重走知识的生成/演绎过程）把隐性知识变成可感的。",
+      "notes": "懂了但用不出来——A2 场景2、语言信号‘I can recite it but can't apply it’。"
+    },
+    {
+      "id": "should-trigger-04",
+      "type": "should_trigger",
+      "prompt": "I don't get it — this book on behavioral economics is completely over my head, I keep forgetting what I read after a few pages.",
+      "expected_behavior": "调用 s04-understanding：用浅显开局/标关键词/书读百遍兜底，并提示以旧学新建立心理表征。",
+      "notes": "英文信号 I don't get it / over my head + 读着读着就忘——A2 场景1。"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "帮我记牢这50个考研英语单词，总记了就忘，有没有什么重复背诵的方法？",
+      "expected_behavior": "不应调用 s04-understanding；应调用 s03-memory（三层滤网+四种重复对抗遗忘）。",
+      "notes": "跨书混淆诱饵：机械记忆任务，归 s03，不是‘搞懂’问题。"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "怎么把《思考快与慢》读透并提炼出作者卡尼曼的核心模型，做成自己的知识树？",
+      "expected_behavior": "不应调用 s04-understanding（理解只是其中一步）；应调用 s06-six-step-reading 做完整六步提炼。",
+      "notes": "跨书混淆诱饵：从他人书里提炼模型，归 s06 而非 s04。"
+    },
+    {
+      "id": "should-not-trigger-03",
+      "type": "should_not_trigger",
+      "prompt": "昨晚看的小说《三体》有些情节没看懂，纯属消遣放松，要不要专门去拆解它的逻辑？",
+      "expected_behavior": "不应调用 s04-understanding；消遣性/体验性虚构阅读不以‘搞懂法则’为目标，建议直接享受。",
+      "notes": "边界诱饵：消遣性阅读，B 段明确不调用。"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "这个领域对我完全是全新的，连发展史都找不到，你说的‘先建框架’根本没法建，怎么办？",
+      "expected_behavior": "合理边界判断：识别无旧知且无发展史场景，按 B 段改用‘浅显开局/标关键词/书读百遍’兜底，不强行建框架导致挫败。",
+      "notes": "边界点：无旧知且无法建框架时必须切换替代路径（书中‘记忆无发展史’例证）。"
+    },
+    {
+      "id": "edge-02",
+      "type": "edge_case",
+      "prompt": "我记了一大堆笔记，但让你问我‘为什么’我就答不上来，换个场景这些知识就失效了。",
+      "expected_behavior": "合理边界判断：识别‘记了大量笔记却说不清为什么、换场景失效’——属理解缺陷，调用生成学习去解码法则而非补充记忆。",
+      "notes": "边界点：区分‘记得多’与‘真理解’，引导以旧学新+生成而非继续抄记。"
+    }
+  ]
+}

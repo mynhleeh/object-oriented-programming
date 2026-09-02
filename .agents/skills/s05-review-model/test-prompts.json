@@ -1,0 +1,69 @@
+{
+  "skill": "s05-review-model",
+  "version": "0.1.0",
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "连续三次谈崩客户了，都是在报价环节出问题，我想沉淀一个以后能直接用的成交方法。",
+      "expected_behavior": "调用 s05-review-model：用凑齐因果分析成交要素（交换欲/信任感/竞争力），提炼成一句话方法论模型并挂入模型树。",
+      "notes": "连续在同类事上踩坑+想沉淀可复用方法——A2 场景1、2。"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "又犯同样的错了，每次都是睡前忍不住刷手机熬夜，第二天后悔，怎么才能根治？",
+      "expected_behavior": "调用 s05-review-model：分析因果（起因=看了第一集/打开手机），用切断因果抽掉起因，而非靠意志力硬扛。",
+      "notes": "又犯同样的错+想根治——语言信号、A2 场景3；对应书中‘从不开始’模型。"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "这次项目能成纯靠运气，流程全乱的，怎么把这次成功变成可复用的方法论？",
+      "expected_behavior": "调用 s05-review-model：从成功事件分析问题（世界观）与拿出方案（方法论），抽象归并收敛成模型。",
+      "notes": "这次成功纯靠运气、想变方法——语言信号、A2 场景2。"
+    },
+    {
+      "id": "should-trigger-04",
+      "type": "should_trigger",
+      "prompt": "怎么老在这种人际关系上栽跟头，我想从自己的经历里沉淀出几条原则，别再走老路。",
+      "expected_behavior": "调用 s05-review-model：连续踩坑→追溯本质原因（如人性机制），提炼世界观/方法论模型，标注边界。",
+      "notes": "怎么老栽跟头+想沉淀原则——A2 场景4、5；why does this keep happening。"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "怎么把《思考快与慢》读透并提炼出卡尼曼的核心模型，做成自己的知识库？",
+      "expected_behavior": "不应调用 s05-review-model（这是从他人书里提炼，从他人来）；应调用 s06-six-step-reading。",
+      "notes": "跨书混淆诱饵：从书提炼模型归 s06，与 s05 是并列路径（contrasts-with）。"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "我把每次复盘都记下来了，但总记不住这些要点，过两周就忘了，有没有记牢的办法？",
+      "expected_behavior": "不应调用 s05-review-model；记不住属对抗遗忘，应调用 s03-memory（三层滤网+四种重复）。",
+      "notes": "跨书混淆诱饵：记忆问题归 s03，复盘产出后‘记牢’不在 s05 范围。"
+    },
+    {
+      "id": "should-not-trigger-03",
+      "type": "should_not_trigger",
+      "prompt": "今天出门忘带钥匙被锁门外了，纯属一时大意，想复盘一下。",
+      "expected_behavior": "不应调用 s05-review-model；单次偶发事件无需沉淀模型，提示建立提醒习惯即可，不必走完整复盘。",
+      "notes": "边界诱饵：单次偶然事件，B 段‘不要在以下情况使用’第一条。"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我今天又搞砸了一次汇报，气死我了，真想骂老板一顿，我就是想发泄一下，没打算改进什么。",
+      "expected_behavior": "合理边界判断：识别‘只想宣泄情绪、不打算改进’——按 B 段不调用复盘，先共情倾听，不强行析出模型。",
+      "notes": "边界点：仅想宣泄情绪时不调用（B 段明确边界）。"
+    },
+    {
+      "id": "edge-02",
+      "type": "edge_case",
+      "prompt": "客户突然破产跑路导致项目黄了，这完全是不可控的外部因素，我能复盘出什么模型吗？",
+      "expected_behavior": "合理边界判断：识别纯外部不可控问题，按 B 段只沉淀‘应对法’而非因果模型，避免虚假归因。",
+      "notes": "边界点：外部不可控只能沉淀应对法，不强行凑齐因果。"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "EduHub Skill Manager"
+  short_description: "Install and publish EduHub skills"
+  default_prompt: "Use $eduhub-skill-manager to install a skill from EduHub or publish this local skill folder."

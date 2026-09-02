@@ -1,0 +1,76 @@
+{
+  "skill": "s08-knowledge-system",
+  "version": "0.1.0",
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我想搭一个「职场沟通」领域的知识体系，从哪开始？",
+      "expected_behavior": "调用 s08，按构建三要素展开：确定主题（问题/第一原理导向）、确定框架（世界观+方法论）、确定结构（树状以上统下、不重不漏）。",
+      "notes": "用户想搭某领域知识体系（触发场景1、语言信号「如何搭建XX知识体系」）"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "我学了很多知识但很乱、记不住也用不上，怎么办？",
+      "expected_behavior": "调用 s08，指出这是碎片化=知识垃圾场（ce20），需要按关系（因果/层次/中介）把关系紧密的知识连成体系，而非继续收集。",
+      "notes": "用户学了很多却混乱（触发场景2、语言信号「学了很多但很乱/用不上」）"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "我双链笔记连了很多线，但说不清这些知识之间到底是什么关系。",
+      "expected_behavior": "调用 s08，指出双链网状是「漂亮骗子」（ce08），应改树状结构，明确因果/层次/中介三类关系而非模糊连线。",
+      "notes": "用户用双链笔记却说不清关系（触发场景3、语言信号「这些笔记连不起来」）"
+    },
+    {
+      "id": "should-trigger-04",
+      "type": "should_trigger",
+      "prompt": "我做了几本关于投资的主题阅读，想把多本书的知识串成一张网。",
+      "expected_behavior": "调用 s08，按主题阅读整合思路，确定统一主题与框架，用树状两规则把多本书模型归位成体系。",
+      "notes": "用户做主题阅读想串起多本书（触发场景4）"
+    },
+    {
+      "id": "should-trigger-05",
+      "type": "should_trigger",
+      "prompt": "我发现不同的书都在讲同一件事但结构各异，想自己拼出全貌。",
+      "expected_behavior": "调用 s08，用以上统下、不重不漏规则整合重复内容，建立统一框架与层级，消除结构冲突。",
+      "notes": "用户想拼出全貌（触发场景5）"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我想把《思考快与慢》这本书真正吃透、变成自己的东西。",
+      "expected_behavior": "不应调用 s08（那是建体系的一「步」）；应触发 s11-model-tree-four-steps（提炼→存入→形成体系→回归本质四步总装）。",
+      "notes": "跨书混淆诱饵：指向同书 s11 总装，s08 只负责其中「形成体系」这步"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "量子力学里的「概率波」概念我总是理解不透，怎么才能搞懂？",
+      "expected_behavior": "不应调用 s08；应触发 s04-understanding（以旧学新+生成学习）。",
+      "notes": "诱饵：单点理解问题，s08 管关系结构而非单个概念理解"
+    },
+    {
+      "id": "should-not-trigger-03",
+      "type": "should_not_trigger",
+      "prompt": "帮我复盘一下上周项目失败的原因，提炼点经验。",
+      "expected_behavior": "不应调用 s08；应触发 s05-review-model（从经验复盘凑齐/切断因果提炼模型）。",
+      "notes": "诱饵：从自身经验提炼模型，归属 s05 而非建体系"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我给每个具体问题都建一个体系：客户投诉一个、团队协作一个、汇报一个……可以吗？",
+      "expected_behavior": "调用 s08 但纠正：纯问题导向会割裂知识、体系间大量重叠（ce21），应补建第一原理导向型体系，双体系并行。",
+      "notes": "边界点：只按具体问题建体系，需引导到双体系理论"
+    },
+    {
+      "id": "edge-02",
+      "type": "edge_case",
+      "prompt": "我把笔记按文件夹分类归档好了，这就是知识体系了吧？",
+      "expected_behavior": "调用 s08 判定为否：分类归档/收集箱不是知识体系，本质是「知识之间的关系」，需树状结构而非文件夹。",
+      "notes": "边界点：分类归档 vs 知识体系（书内失败模式）"
+    }
+  ]
+}
