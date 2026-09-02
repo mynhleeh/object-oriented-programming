@@ -1,0 +1,18 @@
+[submodule "reference/TrisTaam"]
+	path = reference/TrisTaam
+	url = https://github.com/TrisTaam/OOP-Java-PTIT.git
+[submodule "reference/nyagami"]
+	path = reference/nyagami
+	url = https://github.com/nyagami/Java-PTIT.git
+[submodule "reference/Lazygarde"]
+	path = reference/Lazygarde
+	url = https://github.com/Lazygarde/Java_Code_PTIT.git
+[submodule "reference/NgTienHungg"]
+	path = reference/NgTienHungg
+	url = https://github.com/NgTienHungg/PTIT-Source.git
+[submodule "reference/QuanNM-PTIT"]
+	path = reference/QuanNM-PTIT
+	url = https://github.com/QuanNM-PTIT/OOP_Java_PTIT.git
+[submodule "reference/yalza"]
+	path = reference/yalza
+	url = https://github.com/yalza/JAVA_code.ptit.git
