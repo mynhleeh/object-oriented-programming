@@ -1,6 +1,6 @@
 package ptit;
 
-public class chello {
+public class Chello {
     public static void main(String[] args) {
         System.out.println("Hello PTIT. ");
     }
