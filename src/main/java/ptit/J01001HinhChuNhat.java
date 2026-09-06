@@ -13,5 +13,7 @@ public class J01001HinhChuNhat {
             System.out.println(0);
         else
             System.out.println(((len + width) * 2) + " " + (len * width));
+
+        scn.close();
     }
 }

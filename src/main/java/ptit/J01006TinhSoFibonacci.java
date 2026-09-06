@@ -20,5 +20,7 @@ public class J01006TinhSoFibonacci {
         int t = scn.nextInt();
         while (t-- > 0)
             System.out.println(fib[scn.nextInt()]);
+
+        scn.close();
     }
 }

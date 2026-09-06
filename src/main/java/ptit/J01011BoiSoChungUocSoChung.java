@@ -21,5 +21,7 @@ public class J01011BoiSoChungUocSoChung {
 
             System.out.println(lcm(a, b) + " " + gcd(a, b));
         }
+
+        scn.close();
     }
 }

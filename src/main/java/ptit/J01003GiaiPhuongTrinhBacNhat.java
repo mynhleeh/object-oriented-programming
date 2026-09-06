@@ -16,5 +16,7 @@ public class J01003GiaiPhuongTrinhBacNhat {
                 System.out.println("VN");
         } else
             System.out.printf("%.2f", -b / a);
+
+        scn.close();
     }
 }
