@@ -1,4 +1,4 @@
-package ptit;
+package NgonNguLapTrinh.LapTrinhJavaCoBan;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;

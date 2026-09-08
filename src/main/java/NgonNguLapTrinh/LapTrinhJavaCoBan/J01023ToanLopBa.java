@@ -1,4 +1,4 @@
-package ptit;
+package NgonNguLapTrinh.LapTrinhJavaCoBan;
 
 import java.util.ArrayList;
 import java.util.Scanner;

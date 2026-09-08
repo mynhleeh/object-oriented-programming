@@ -1,4 +1,4 @@
-package ptit;
+package NgonNguLapTrinh.XauKyTu;
 
 import java.util.Scanner;
 

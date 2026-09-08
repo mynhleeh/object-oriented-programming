@@ -1,4 +1,4 @@
-package ptit;
+package NgonNguLapTrinh.LapTrinhJavaCoBan;
 
 public class Chello {
     public static void main(String[] args) {
