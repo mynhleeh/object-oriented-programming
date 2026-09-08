@@ -4,7 +4,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class J02007DemSoLanXuatHien {
+public class J02007_DemSoLanXuatHien {
     static Scanner scn = new Scanner(System.in);
 
     static void solve() {

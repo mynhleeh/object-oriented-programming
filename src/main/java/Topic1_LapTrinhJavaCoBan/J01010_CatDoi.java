@@ -2,7 +2,7 @@ package Topic1_LapTrinhJavaCoBan;
 
 import java.util.*;
 
-public class J01010CatDoi {
+public class J01010_CatDoi {
     static char transform(char c) {
         switch (c) {
             case '0':

@@ -2,7 +2,7 @@ package Topic1_LapTrinhJavaCoBan;
 
 import java.util.Scanner;
 
-public class J01003GiaiPhuongTrinhBacNhat {
+public class J01003_GiaiPhuongTrinhBacNhat {
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
 

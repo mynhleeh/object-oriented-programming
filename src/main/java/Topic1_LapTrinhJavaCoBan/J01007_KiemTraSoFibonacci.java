@@ -3,7 +3,7 @@ package Topic1_LapTrinhJavaCoBan;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class J01007KiemTraSoFibonacci {
+public class J01007_KiemTraSoFibonacci {
     static long[] fib = new long[93];
 
     static void create() {

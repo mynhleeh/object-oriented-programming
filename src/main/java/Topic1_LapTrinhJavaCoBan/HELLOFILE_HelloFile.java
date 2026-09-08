@@ -5,7 +5,7 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.io.IOException;
 
-public class Hellofile {
+public class HELLOFILE_HelloFile {
     public static void main(String[] args) throws IOException {
         // List<String> lines = Files.readAllLines(Paths.get("Hello.txt"));
         // for (String l : lines)

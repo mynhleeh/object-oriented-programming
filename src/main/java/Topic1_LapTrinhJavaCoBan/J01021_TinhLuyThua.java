@@ -2,7 +2,7 @@ package Topic1_LapTrinhJavaCoBan;
 
 import java.util.Scanner;
 
-public class J01021TinhLuyThua {
+public class J01021_TinhLuyThua {
     static final long MOD = 1_000_000_000 + 7;
 
     static long expo(long a, long b) {

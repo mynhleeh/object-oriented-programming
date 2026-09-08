@@ -2,7 +2,7 @@ package Topic1_LapTrinhJavaCoBan;
 
 import java.util.*;
 
-public class J01014UocSoNguyenToLonNhat {
+public class J01014_UocSoNguyenToLonNhat {
     static long solve(long n) {
         long maxPrime = -1;
 

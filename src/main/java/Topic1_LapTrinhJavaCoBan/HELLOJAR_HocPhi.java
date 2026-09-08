@@ -79,7 +79,7 @@ class Invoice {
     }
 }
 
-public class InvoiceView {
+public class HELLOJAR_HocPhi {
     public static void show(Invoice invoice) {
         System.out.println("Mã sinh viên: " + invoice.StudentId);
         System.out.println("Họ tên: " + invoice.StudentName);
@@ -99,6 +99,6 @@ public class InvoiceView {
         PaymentController pc = new PaymentController();
         // Output for test
         Invoice invoice = pc.getInvoice();
-        InvoiceView.show(invoice);
+        HELLOJAR_HocPhi.show(invoice);
     }
 }

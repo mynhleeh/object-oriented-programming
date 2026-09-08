@@ -2,7 +2,7 @@ package Topic1_LapTrinhJavaCoBan;
 
 import java.util.Scanner;
 
-public class J01011BoiSoChungUocSoChung {
+public class J01011_BoiSoChungUocSoChung {
     static long gcd(long a, long b) {
         return b == 0 ? a : gcd(b, a % b);
     }

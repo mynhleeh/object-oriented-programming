@@ -2,7 +2,7 @@ package Topic2_Mang;
 
 import java.util.*;
 
-public class J02006HopCuaHaiDaySo {
+public class J02006_HopCuaHaiDaySo {
     public static void main(String[] arg) {
         Scanner scn = new Scanner(System.in);
 

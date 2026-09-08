@@ -2,7 +2,7 @@ package Topic1_LapTrinhJavaCoBan;
 
 import java.util.Scanner;
 
-public class J01016ChuSo4VaChuSo7 {
+public class J01016_ChuSo4VaChuSo7 {
     static boolean solve(String str) {
         int four = 0, seven = 0;
 

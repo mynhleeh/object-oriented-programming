@@ -2,7 +2,7 @@ package Topic3_XauKyTu;
 
 import java.util.Scanner;
 
-public class J01020DayDuCacChuSo {
+public class J01020_DayDuCacChuSo {
     static long solve(long n) {
         int mask = 0, i = 1;
 

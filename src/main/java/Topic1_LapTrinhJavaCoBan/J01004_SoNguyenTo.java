@@ -2,7 +2,7 @@ package Topic1_LapTrinhJavaCoBan;
 
 import java.util.Scanner;
 
-public class J01004SoNguyenTo {
+public class J01004_SoNguyenTo {
     static boolean prime(int n) {
         if (n < 2)
             return false;

@@ -2,7 +2,7 @@ package Topic2_Mang;
 
 import java.util.Scanner;
 
-public class J02004MangDoiXung {
+public class J02004_MangDoiXung {
     static boolean symmetry(String str) {
         String rev = new StringBuilder(str).reverse().toString();
         return str.equals(rev);

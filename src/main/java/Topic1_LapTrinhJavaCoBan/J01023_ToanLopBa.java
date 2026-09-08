@@ -3,7 +3,7 @@ package Topic1_LapTrinhJavaCoBan;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class J01023ToanLopBa {
+public class J01023_ToanLopBa {
     static ArrayList<String> addList = new ArrayList<>();
     static ArrayList<String> subList = new ArrayList<>();
 

@@ -2,7 +2,7 @@ package Topic1_LapTrinhJavaCoBan;
 
 import java.util.Scanner;
 
-public class J01005ChiaTamGiac {
+public class J01005_ChiaTamGiac {
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
 

@@ -2,7 +2,7 @@ package Topic1_LapTrinhJavaCoBan;
 
 import java.util.*;
 
-public class J01013TongUocSo1 {
+public class J01013_TongUocSo1 {
     static int MAX = 2_000_000;
     static long minPrime[] = new long[MAX + 1];
 

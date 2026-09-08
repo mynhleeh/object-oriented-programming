@@ -2,7 +2,7 @@ package Topic1_LapTrinhJavaCoBan;
 
 import java.util.Scanner;
 
-public class J01012UocSoChiaHetCho2 {
+public class J01012_UocSoChiaHetCho2 {
     static long count(long n) {
         if (n % 2 != 0)
             return 0;

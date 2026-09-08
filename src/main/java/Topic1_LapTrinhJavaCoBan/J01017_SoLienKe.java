@@ -2,11 +2,17 @@ package Topic1_LapTrinhJavaCoBan;
 
 import java.util.Scanner;
 
-public class J01024SoTamPhan {
+public class J01017_SoLienKe {
     static boolean solve(String str) {
-        for (char c : str.toCharArray()) {
-            if (c != '0' && c != '1' && c != '2')
+        int prev = str.charAt(0) - '0';
+
+        for (int i = 1; i < str.length(); i++) {
+            int cur = str.charAt(i) - '0';
+
+            if (Math.abs(cur - prev) != 1)
                 return false;
+
+            prev = cur;
         }
         return true;
     }

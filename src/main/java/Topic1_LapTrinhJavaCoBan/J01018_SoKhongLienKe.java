@@ -2,7 +2,7 @@ package Topic1_LapTrinhJavaCoBan;
 
 import java.util.Scanner;
 
-public class J01018SoKhongLienKe {
+public class J01018_SoKhongLienKe {
     static boolean solve(String str) {
         int sum = str.charAt(0) - '0';
         int pre = str.charAt(0) - '0';

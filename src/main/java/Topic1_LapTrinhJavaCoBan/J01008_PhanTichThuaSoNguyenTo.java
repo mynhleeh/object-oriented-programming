@@ -2,7 +2,7 @@ package Topic1_LapTrinhJavaCoBan;
 
 import java.util.Scanner;
 
-public class J01008PhanTichThuaSoNguyenTo {
+public class J01008_PhanTichThuaSoNguyenTo {
     static void decompose(long n) {
         for (int i = 2; i <= Math.sqrt(n); i++) {
             if (n % i == 0) {

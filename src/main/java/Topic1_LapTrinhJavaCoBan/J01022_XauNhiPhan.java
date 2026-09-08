@@ -2,7 +2,7 @@ package Topic1_LapTrinhJavaCoBan;
 
 import java.util.Scanner;
 
-public class J01022XauNhiPhan {
+public class J01022_XauNhiPhan {
     static long[] fib = new long[93];
 
     static {

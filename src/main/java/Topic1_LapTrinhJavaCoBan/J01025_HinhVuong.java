@@ -12,7 +12,7 @@ class point {
     }
 }
 
-public class J01025HinhVuong {
+public class J01025_HinhVuong {
     public static void main(String[] arg) {
         Scanner scn = new Scanner(System.in);
 

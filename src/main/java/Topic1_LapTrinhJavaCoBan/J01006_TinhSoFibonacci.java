@@ -2,7 +2,7 @@ package Topic1_LapTrinhJavaCoBan;
 
 import java.util.Scanner;
 
-public class J01006TinhSoFibonacci {
+public class J01006_TinhSoFibonacci {
     static long[] fib = new long[93];
 
     static void create() {
