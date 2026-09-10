@@ -2,24 +2,27 @@ package Topic4_KhaiBaoLopVaDoiTuong;
 
 import java.util.Scanner;
 
-class fraction {
-    private long numerator, denominator;
+class Fraction {
+    private final long numerator, denominator;
 
-    public fraction(long num, long den) {
-        this.numerator = num;
-        this.denominator = den;
+    public Fraction(long num, long den) {
+        long g = gcd(num, den);
+
+        this.numerator = num / g;
+        this.denominator = den / g;
     }
 
-    long gcd(long a, long b) {
-        return b == 0 ? a : gcd(b, a % b);
+    private static long gcd(long a, long b) {
+        while (b != 0) {
+            long r = a % b;
+            a = b;
+            b = r;
+        }
+        return a;
     }
 
-    public String show() {
-        long GCD = gcd(this.numerator, this.denominator);
-
-        this.numerator /= GCD;
-        this.denominator /= GCD;
-
+    @Override
+    public String toString() {
         return this.numerator + "/" + this.denominator;
     }
 }
@@ -28,9 +31,7 @@ public class J04003_PhanSo {
     public static void main(String[] arg) {
         Scanner scn = new Scanner(System.in);
 
-        fraction f = new fraction(scn.nextLong(), scn.nextLong());
-        System.out.println(f.show());
-
+        System.out.println(new Fraction(scn.nextLong(), scn.nextLong()));
         scn.close();
     }
 }
