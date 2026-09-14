@@ -1,3 +1,5 @@
 .cph/
 target/
+bin/
+out/
 *.class
